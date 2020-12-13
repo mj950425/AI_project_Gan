@@ -8,8 +8,7 @@ js-standard-style
 
 Screenshots
 
-https://github.com/mj950425/AI_project_Gan/issues/1#issue-765217836
-
+![image](https://user-images.githubusercontent.com/52944973/102008394-616d0480-3d73-11eb-93c5-b537e762b8fa.png)
 Tech/framework used
 Ex. -
 
