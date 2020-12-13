@@ -7,6 +7,7 @@ Motivation
 js-standard-style
 
 Screenshots
+
 https://github.com/mj950425/AI_project_Gan/issues/1#issue-765217836
 
 Tech/framework used
