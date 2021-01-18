@@ -39,12 +39,4 @@ Unet구조를 통해서 특징 Z를 잘 뽑아내고 Fake의 Z와 Source의 Z를
 
 아주 뛰어난 결과는 아니지만 어느정도 글씨체를 닮은 것 같네요^^
 
-참조한 출처입니다.
-
-
-
-
-jeinalog.tistory.com
-(https://jeinalog.tistory.com/15)
-kaonashi-tyc/zi2zi
 
