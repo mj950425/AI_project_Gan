@@ -1,4 +1,3 @@
-
 [##_Image|kage@ces5hg/btqQhMj701j/bHyK0oHtxQCqdxerTjK3bK/img.png|widthContent|data-origin-width="0" data-origin-height="0" data-ke-mobilestyle="widthContent"|||_##]
 
 요즘 GAN 모델이 핫하니깐 관련 프로젝트를 찾아보았는데, Personal 시대를 맞이해서 개인 손글씨를 폰트로 만든다면 좋을 것 같아 프로젝트를 진행하게 되었습니다!
