@@ -39,32 +39,12 @@ Unet구조를 통해서 특징 Z를 잘 뽑아내고 Fake의 Z와 Source의 Z를
 
 아주 뛰어난 결과는 아니지만 어느정도 글씨체를 닮은 것 같네요^^
 
-참조한 블로그와 깃헙입니다.
+참조한 출처입니다.
 
-[jeinalog.tistory.com/15](https://jeinalog.tistory.com/15)
-
-[
-
-내 손글씨를 따라쓰는 인공지능 요정, Wrinie (1) - 이론
-
-#GAN #UNet #Generative Model #CNN #Deep Learning #딥러닝 #딥러닝 프로젝트 #생성모델 #인공지능 본 글은 개인 프로젝트로 진행된 프로젝트에 대한 소개글입니다. 내 손글씨를 따라쓰는 인공지능 요정, Wrinie
-
-jeinalog.tistory.com
 
 
 
-](https://jeinalog.tistory.com/15)
-
-[github.com/kaonashi-tyc/zi2zi](https://github.com/kaonashi-tyc/zi2zi)
-
-[
-
+jeinalog.tistory.com
+(https://jeinalog.tistory.com/15)
 kaonashi-tyc/zi2zi
 
-Learning Chinese Character style with conditional GAN - kaonashi-tyc/zi2zi
-
-github.com
-
-
-
-](https://github.com/kaonashi-tyc/zi2zi)
