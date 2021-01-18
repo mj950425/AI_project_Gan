@@ -1,15 +1,66 @@
-200자의 손글씨를 GAN 모델을 통해서 자주 사용하는 약 2500자의 손글씨 폰트 제작
+
+[##_Image|kage@ces5hg/btqQhMj701j/bHyK0oHtxQCqdxerTjK3bK/img.png|widthContent|data-origin-width="0" data-origin-height="0" data-ke-mobilestyle="widthContent"|||_##]
+
+요즘 GAN 모델이 핫하니깐 관련 프로젝트를 찾아보았는데, Personal 시대를 맞이해서 개인 손글씨를 폰트로 만든다면 좋을 것 같아 프로젝트를 진행하게 되었습니다!
+
+[##_Image|kage@LFdAc/btqQlKzlWZa/qiDFkr9psUXILO2QzdYiR1/img.png|alignCenter|data-origin-width="0" data-origin-height="0" data-ke-mobilestyle="widthContent"|||_##]
+
+최종 목표입니다 ㅎㅎ..
+
+[##_Image|kage@bhglO4/btqP9s1tfgm/X2LmT5NRcyDLDtTVbWLqBk/img.png|alignCenter|data-origin-width="0" data-origin-height="0" data-ke-mobilestyle="widthContent"|||_##]
+
+한글폰트를 생성하기 위해서 모델은 총 세단계의 과정을 거칩니다. 
+
+첫번째로 프리트레이닝 과정에서는 컴퓨터 폰트 27종을 통해 글자의 특징을 추출하고 복원하는 것을 학습합니다. 이후 개인의 손글씨 210자 를 프리트레인모델을 파인튜닝하여 학습시킵니다. 파인튜닝을 통하여 특징 추출 및 복원을 학습한 모델은 학습하지 않은 나머지 2224자를 생성할 수 있게 됩니다. 이 과정을 인퍼링이라고 합니다.
+
+[##_Image|kage@cWumZe/btqQeen9uxC/TcfQhTO1cDgCYQFXqWWc4k/img.png|alignCenter|data-origin-width="0" data-origin-height="0" data-ke-mobilestyle="widthContent"|Unet구조를 가지는 pix2pix모델을 사용했습니다||_##]
+
+Unet구조를 통해서 특징 Z를 잘 뽑아내고 Fake의 Z와 Source의 Z를 다시 인코더에 넣어서 비교하는 Constant loss 그리고 글자 폰트 카테고리를 비교해주는 Category loss와 Fake이미지와 Ground Truth이미지와의 L1거리를 loss텀으로 추가해서 모델을 만들었습니다.
+
+[##_Image|kage@dVhCRL/btqQjoccznx/yRF3tgwKc9KXtiMBIj1Ay0/img.png|alignCenter|data-origin-width="0" data-origin-height="0" data-ke-mobilestyle="widthContent"|||_##]
+
+기술의 문제점으로는 프리트레인 과정에서 글자들의 디테일한 부분을 잘 잡아내지 못하고 어려운 글자들을 복원하지 못한다는 점이었습니다.
+
+[##_Image|kage@dNG1kY/btqQfKf6wiA/KzvYm5V1SQt1XsEX6Pf4D0/img.png|alignCenter|data-origin-width="0" data-origin-height="0" data-ke-mobilestyle="widthContent"|||_##]
+
+다양한 논문들을 통해서 개선방안을 모색했습니다. 대표적으로 Spectral Normalized Gan과 Self-attention Gan 그리고 Super resolution Gan을 추가했습니다.
+
+[##_Image|kage@cGRClH/btqQfLlIn4H/Mn68zfSm64rtOab3lKU5NK/img.png|alignCenter|data-origin-width="0" data-origin-height="0" data-ke-mobilestyle="widthContent"|||_##]
+
+모델의 구조 또한 논문의 내용을 바탕으로 여러가지 loss텀을 추가하면서 변화를 시도했습니다. 우선 학습 과정에서 시간이 너무 오래걸려서 이미지의 픽셀을 줄인 뒤 출력 이미지의 해상도를 SR GAN으로 높여주는 방식을 택했습니다. 모델에 어텐션과 정규화 부분의 방식을 바꿈으로서 좀 더 나은 결과를 확인할 수 있었네요
+
+[##_Image|kage@dJjslj/btqQmQe14P1/IeOzCuk9cWGZKWCAsCnNO1/img.png|alignCenter|data-origin-width="0" data-origin-height="0" data-ke-mobilestyle="widthContent"|최종 결과물!||_##]
+
+학습 과정에서 최적의 하이퍼 파라미터와 최적의 모델 구조를 찾는데 아주 많은 시간이 들어 힘이 들었네요..
+
+아주 뛰어난 결과는 아니지만 어느정도 글씨체를 닮은 것 같네요^^
+
+참조한 블로그와 깃헙입니다.
+
+[jeinalog.tistory.com/15](https://jeinalog.tistory.com/15)
+
+[
+
+내 손글씨를 따라쓰는 인공지능 요정, Wrinie (1) - 이론
+
+#GAN #UNet #Generative Model #CNN #Deep Learning #딥러닝 #딥러닝 프로젝트 #생성모델 #인공지능 본 글은 개인 프로젝트로 진행된 프로젝트에 대한 소개글입니다. 내 손글씨를 따라쓰는 인공지능 요정, Wrinie
+
+jeinalog.tistory.com
 
 
-퍼스널 트레이닝 퍼스널 미디어 등등.. 퍼스널 시대를 맞이해서 개인 손글씨 폰트 제작 아이디어를 떠오르게 되었습니다.
+
+](https://jeinalog.tistory.com/15)
+
+[github.com/kaonashi-tyc/zi2zi](https://github.com/kaonashi-tyc/zi2zi)
+
+[
+
+kaonashi-tyc/zi2zi
+
+Learning Chinese Character style with conditional GAN - kaonashi-tyc/zi2zi
+
+github.com
 
 
-![image](https://user-images.githubusercontent.com/52944973/102008394-616d0480-3d73-11eb-93c5-b537e762b8fa.png)
 
-단계별 진행 과정입니다.
-
-![image](https://user-images.githubusercontent.com/52944973/102008480-3c2cc600-3d74-11eb-992d-9e5627d0dcf2.png)
-
-사용 모델입니다. pix2pix를 중심적으로 사용하면서 여러가지 loss 텀들을 추가했습니다.
-
-![image](https://user-images.githubusercontent.com/52944973/102008650-85314a00-3d75-11eb-9e05-e8f6e6b9bf67.png)
+](https://github.com/kaonashi-tyc/zi2zi)
